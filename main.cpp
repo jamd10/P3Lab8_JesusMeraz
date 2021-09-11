@@ -39,16 +39,16 @@ int main(int argc, char** argv) {
 					cout<<"Saldodao de asalto agregado exitosamente"<<endl;
 				}else if(soldado == 2){
 					string nombre1, nombre2;
-					int vida = 100, fuerza, blindaje, camuflaje;
+					int vida2 = 100, fuerza2, blindaje2, camuflaje2;
 					cout<<"Ingrese nombre soldado equipo 1: "<<endl;
 					cin>> nombre1;
 					cout<<"Ingrese nombre soldado equipo 2: "<<endl;
 					cin>> nombre2;
-					fuerza = +rand()%100;
-					blindaje = +rand()%30;
-					camuflaje = +rand()%30;
-					SoldadoAsalto* soldier1 = new SoldadoAsalto(nombre1, vida, fuerza, blindaje, camuflaje);
-					SoldadoAsalto* soldier2 = new SoldadoAsalto(nombre2, vida, fuerza, blindaje, camuflaje);
+					fuerza2 = +rand()%100;
+					blindaje2 = +rand()%30;
+					camuflaje2 = +rand()%30;
+					SoldadoAsalto* soldier1 = new SoldadoAsalto(nombre1, vida, fuerza2, blindaje2, camuflaje2);
+					SoldadoAsalto* soldier2 = new SoldadoAsalto(nombre2, vida, fuerza2, blindaje2, camuflaje2);
 					lista ->  agregarEquipo1(soldier1);
 					lista ->  agregarEquipo2(soldier2);
 					cout<<"Saldodao de soporte agregado exitosamente"<<endl;
