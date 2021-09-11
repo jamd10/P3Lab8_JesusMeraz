@@ -2,21 +2,26 @@
 #include <string>
 #include "WarSimulator.h"
 #include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "Soldado.h"
 #include "SoldadoAsalto.h"
 #include "SoldadoSoporte.h"
 #include <vector>
+#include <cmath>
 using namespace std;
 int menu();
 int main(int argc, char** argv) {
 	WarSimulator* lista = new WarSimulator();
 	int op = menu();
-	srand (time(NULL));
+
 	while(op != 7){
 		switch(op){
 			case 1:{
+				srand (time(NULL));
 				string nombre1, nombre2;
 				int vida = 100, fuerza, velocidad, fuerzaExtra;
+				int vida2 = 100, fuerza2, velocidad2, fuerzaExtra2;
 				cout<<"********** Menu **********"<<endl;
 				cout<<"* 1. Soldado de asalto   *"<<endl;
 				cout<<"* 2. Soldado de soporte  *"<<endl;
@@ -25,32 +30,38 @@ int main(int argc, char** argv) {
 				int soldado;
 				cin>>soldado;				
 				if(soldado == 1){
-					srand (time(NULL));
+					
 					cout<<"Ingrese nombre soldado equipo 1: "<<endl;
 					cin>> nombre1;
 					cout<<"Ingrese nombre soldado equipo 2: "<<endl;
 					cin>> nombre2;
-					fuerza = +rand()%100;
-					velocidad = +rand()%30;
-					fuerzaExtra = +rand()%30;
+					fuerza = rand()%100;
+					velocidad = rand()%30;
+					fuerzaExtra = rand()%30;
+					fuerza2 = rand()%100;
+					velocidad2 = rand()%30;
+					fuerzaExtra2 = rand()%30;
 					SoldadoAsalto* soldier1 = new SoldadoAsalto(nombre1, vida, fuerza, velocidad, fuerzaExtra);
-					SoldadoAsalto* soldier2 = new SoldadoAsalto(nombre2, vida, fuerza, velocidad, fuerzaExtra);
+					SoldadoAsalto* soldier2 = new SoldadoAsalto(nombre2, vida2, fuerza2, velocidad2, fuerzaExtra2);
 					lista ->  agregarEquipo1(soldier1);
 					lista ->  agregarEquipo2(soldier2);
 					cout<<"Saldodao de asalto agregado exitosamente"<<endl;
 				}else if(soldado == 2){
-					srand (time(NULL));
 					string nombre1, nombre2;
+					int vida = 100, fuerza, blindaje, camuflaje;
 					int vida2 = 100, fuerza2, blindaje2, camuflaje2;
 					cout<<"Ingrese nombre soldado equipo 1: "<<endl;
 					cin>> nombre1;
 					cout<<"Ingrese nombre soldado equipo 2: "<<endl;
 					cin>> nombre2;
-					fuerza2 = +rand()%100;
-					blindaje2 = +rand()%30;
-					camuflaje2 = +rand()%30;
-					SoldadoAsalto* soldier1 = new SoldadoAsalto(nombre1, vida, fuerza2, blindaje2, camuflaje2);
-					SoldadoAsalto* soldier2 = new SoldadoAsalto(nombre2, vida, fuerza2, blindaje2, camuflaje2);
+					fuerza = rand()%100;
+					blindaje = rand()%30;
+					camuflaje = rand()%30;
+					fuerza2 = rand()%100;
+					blindaje2 = rand()%30;
+					camuflaje2 = rand()%30;
+					SoldadoAsalto* soldier1 = new SoldadoAsalto(nombre1, vida, fuerza, blindaje, camuflaje);
+					SoldadoAsalto* soldier2 = new SoldadoAsalto(nombre2, vida2, fuerza2, blindaje2, camuflaje2);
 					lista ->  agregarEquipo1(soldier1);
 					lista ->  agregarEquipo2(soldier2);
 					cout<<"Saldodao de soporte agregado exitosamente"<<endl;
