@@ -25,6 +25,7 @@ int main(int argc, char** argv) {
 				int soldado;
 				cin>>soldado;				
 				if(soldado == 1){
+					srand (time(NULL));
 					cout<<"Ingrese nombre soldado equipo 1: "<<endl;
 					cin>> nombre1;
 					cout<<"Ingrese nombre soldado equipo 2: "<<endl;
@@ -38,6 +39,7 @@ int main(int argc, char** argv) {
 					lista ->  agregarEquipo2(soldier2);
 					cout<<"Saldodao de asalto agregado exitosamente"<<endl;
 				}else if(soldado == 2){
+					srand (time(NULL));
 					string nombre1, nombre2;
 					int vida2 = 100, fuerza2, blindaje2, camuflaje2;
 					cout<<"Ingrese nombre soldado equipo 1: "<<endl;
@@ -76,7 +78,7 @@ int main(int argc, char** argv) {
 				break;
 			}
 			case 5:{
-				// sin tiempo me quede :c
+				// sin tiempo me quede :c s
 				break;
 			}
 			case 6:{
